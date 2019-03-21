@@ -38,6 +38,7 @@ public class Solution {
     // Complete the activityNotifications function below.
     static int activityNotifications(int[] expenditure, int d) {
 
+
 		int notifyCounter = 0;
 
 		for (int i = d; i<expenditure.length; i++){
