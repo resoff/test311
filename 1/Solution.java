@@ -1,26 +1,32 @@
 ﻿import java.util.Scanner;
 
-public class Solution {
-	static Object object;
+public class Solution 
+{
 	/*
-	 * сделать обьект и выполнять его из отдельного потока
-	 * лябмда функция
-	 * обьект
+	 * создать обьект и выполнять его в отдельном потоке
+	 * лябмда выражение
 	 */
 	public static void main(String[] args) {
 		
-		object = new Object();
+		Thread thread1 = new Thread (
+				() -> new RunnerL().run()
+				);
+		thread1.start();
 	}
    
 }
 
-class MyThread extends Thread {
-    public void run() {
-    	Object object = new Object();
+class RunnerL implements Runnable 
+{
+
+    @Override
+    public void run() 
+    {
+    	new ObjectTriangle().Object();
     }
 }
 
-class Object 
+class ObjectTriangle
 {
 	/*
      *  Дано n - число уровней. Построить треугольник из символов #.
@@ -31,7 +37,8 @@ class Object
      *	####
      */
 	
-	static void func1(int n) {
+	static void CreteTriangle(int n) 
+	{
 
         int c = n - 1;
         for (int i = 0; i < n; i++) {
@@ -43,10 +50,11 @@ class Object
         }
     }
 	
-	public Object() {
+	public void Object() 
+	{
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        func1(n);
+        CreteTriangle(n);
     }
 }
 
