@@ -1,7 +1,28 @@
 ﻿import java.util.Scanner;
 
 public class Solution {
-    /*
+	static Object object;
+	/*
+	 * сделать обьект и выполнять его из отдельного потока
+	 * лябмда функция
+	 * обьект
+	 */
+	public static void main(String[] args) {
+		
+		object = new Object();
+	}
+   
+}
+
+class MyThread extends Thread {
+    public void run() {
+    	Object object = new Object();
+    }
+}
+
+class Object 
+{
+	/*
      *  Дано n - число уровней. Построить треугольник из символов #.
      *  Пример для n = 4:
      *	   #
@@ -9,8 +30,8 @@ public class Solution {
      *	 ###
      *	####
      */
-
-    static void func1(int n) {
+	
+	static void func1(int n) {
 
         int c = n - 1;
         for (int i = 0; i < n; i++) {
@@ -20,13 +41,12 @@ public class Solution {
             System.out.println();
             c--;
         }
-
     }
-
-    public static void main(String[] args) {
+	
+	public Object() {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         func1(n);
     }
 }
+
